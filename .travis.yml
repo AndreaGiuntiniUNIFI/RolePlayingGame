@@ -29,3 +29,5 @@ before_script: cd $HOME/
 
 script:
   - ./gradlew build --scan -s
+after_success:
+  - ./gradlew jacocoTestReport coveralls
