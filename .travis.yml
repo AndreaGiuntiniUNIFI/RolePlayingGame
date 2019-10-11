@@ -1,0 +1,15 @@
+env:
+  global:
+    - HOME="RolePlayingGame/"
+
+language: java
+install: true
+
+os: linux
+dist: trusty
+jdk: oraclejdk8
+
+before_script: cd $HOME
+
+script:
+  - ./gradlew build --scan -s
