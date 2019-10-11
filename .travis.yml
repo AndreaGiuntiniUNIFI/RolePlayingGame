@@ -1,6 +1,6 @@
 env:
   global:
-    - HOME="RolePlayingGame/"
+    - HOME="RolePlayingGame"
 
 language: java
 install: true
@@ -9,7 +9,16 @@ os: linux
 dist: trusty
 jdk: oraclejdk8
 
-before_script: cd $HOME
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+before_script: cd $HOME/
 
 script:
   - ./gradlew build --scan -s
