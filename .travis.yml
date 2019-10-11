@@ -9,6 +9,13 @@ os: linux
 dist: trusty
 jdk: oraclejdk8
 
+notifications:
+  email:
+    recipients:
+      - andrea.giuntini@stud.unifi.it
+    on_success: never # default: change
+    on_failure: always # default: always
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
