@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 public class CharacterControllerTest {
 	
 	@Mock
-	CharacterView characterView;
+	private CharacterView characterView;
 	
 	@Test
 	public void test() {
