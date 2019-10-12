@@ -4,15 +4,17 @@ public class Character {
 	private String name;
 	private double currentLifePoints;
 	private double maximumLifePoints;
+	private double potions;
 
 	public Character() {
 
 	}
 
-	public Character(String name, double currentLifePoints, double maximumLifePoints) {
+	public Character(String name, double currentLifePoints, double maximumLifePoints, double potions) {
 		this.setName(name);
 		this.setCurrentLifePoints(currentLifePoints);
 		this.setMaximumLifePoints(maximumLifePoints);
+		this.setPotions(potions);
 	}
 
 	public String getName() {
@@ -37,6 +39,14 @@ public class Character {
 
 	public void setMaximumLifePoints(double maximumLifePoints) {
 		this.maximumLifePoints = maximumLifePoints;
+	}
+
+	public double getPotions() {
+		return potions;
+	}
+
+	public void setPotions(double potions) {
+		this.potions = potions;
 	}
 
 }

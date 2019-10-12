@@ -20,11 +20,13 @@ jacocoTestReport {
         html.enabled = true
     }
 }
-    
+
+//This task is essential for making travis.ci working
 coveralls {
     sourceDirs += ['src/main/kotlin']
 }
 
+//This task is essential for skipping the terms of service terminal procedure
 buildScan {
     termsOfServiceUrl = 'https://gradle.com/terms-of-service'
     termsOfServiceAgree = 'yes'

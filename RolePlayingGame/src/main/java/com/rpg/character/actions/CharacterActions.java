@@ -1,6 +1,9 @@
 package com.rpg.character.actions;
 
-public interface CharacterActions {
-	public void usePotion(Character character);
-	public void getDamage(Character character);
+import com.rpg.character.model.Character;
+
+public class CharacterActions {
+	public void restoreLifePoints(Character character) {
+		character.setCurrentLifePoints(character.getMaximumLifePoints());
+	}
 }
