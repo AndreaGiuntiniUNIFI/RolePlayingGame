@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.rpg.character.actions.CharacterActions;
 import com.rpg.character.view.CharacterView;
 
 import static org.mockito.Mockito.*;
@@ -16,6 +17,9 @@ public class CharacterControllerTest {
 
 	@Mock
 	private CharacterView characterView;
+	
+	@Mock 
+	private CharacterActions characterActions;
 
 	@InjectMocks
 	private CharacterController characterController;
