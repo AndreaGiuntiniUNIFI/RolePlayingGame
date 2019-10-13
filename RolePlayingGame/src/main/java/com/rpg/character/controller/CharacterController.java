@@ -24,4 +24,24 @@ public class CharacterController {
 		characterActions.restoreLifePoints(character);
 		characterView.showPotions(character.getPotions());
 	}
+
+	public void verifyCharacterName(Character character, String name) {
+		int nameLength = name.length();
+
+		if (name.isEmpty()) {
+			characterView.showError("Name is empty");
+			return;
+		}
+
+		int index = 0;
+ 
+		while (index < nameLength) {
+			if (java.lang.Character.isWhitespace(name.charAt(index))) {
+				characterView.showError("Name is not valid, contains white spaces");
+				return;
+			}
+			index ++;
+		}
+		character.setName(name);
+	}
 }

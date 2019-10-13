@@ -10,13 +10,6 @@ public class Character {
 
 	}
 
-	public Character(String name, double currentLifePoints, double maximumLifePoints, double potions) {
-		this.name = name;
-		this.currentLifePoints = currentLifePoints;
-		this.maximumLifePoints = maximumLifePoints;
-		this.potions = potions;
-	}
-
 	public String getName() {
 		return name;
 	}

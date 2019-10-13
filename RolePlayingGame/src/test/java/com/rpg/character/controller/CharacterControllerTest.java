@@ -65,4 +65,35 @@ public class CharacterControllerTest {
 		verifyNoMoreInteractions(ignoreStubs(characterActions));
 	}
 
+	@Test
+	public void testSetNameWhenEmptyString() {
+		// setup
+		Character character = new Character();
+		// exercise
+		characterController.verifyCharacterName(character, "");
+		// verify
+		verify(characterView).showError("Name is empty");
+		verifyNoMoreInteractions(ignoreStubs(characterActions));
+	}
+
+	@Test
+	public void testSetNameWhenStringContainsSpaces() {
+		// setup
+		Character character = new Character();
+		// exercise
+		characterController.verifyCharacterName(character, " Name  ");
+		// verify
+		verify(characterView).showError("Name is not valid, contains white spaces");
+		verifyNoMoreInteractions(ignoreStubs(characterActions));
+	}
+
+	@Test
+	public void testSetNameWhenStringDoesNotContainSpaces() {
+		// setup
+		Character character = new Character();
+		// exercise
+		characterController.verifyCharacterName(character, "Hero");
+		// verify
+		assertThat(character.getName()).isEqualTo("Hero");
+	}
 }
