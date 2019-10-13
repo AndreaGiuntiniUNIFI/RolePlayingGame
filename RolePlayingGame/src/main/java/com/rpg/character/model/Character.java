@@ -5,7 +5,8 @@ public class Character {
 	private double currentLifePoints;
 	private double maximumLifePoints;
 	private double potions;
-
+	
+	// Constructor is empty just for testing
 	public Character() {
 
 	}
